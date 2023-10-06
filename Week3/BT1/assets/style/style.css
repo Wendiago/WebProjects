@@ -58,3 +58,27 @@ body{
     width: 100%;
     height: 100%;
 }
+
+/*Win screen*/
+.winning-screen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999; /* Ensure it appears above other content */
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    display: none;
+}
+
+.winning-screen h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
