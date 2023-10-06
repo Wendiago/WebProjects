@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+.container{
+    margin-top: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.icon{
+    flex: 0 0 calc(100%/4 - 24px);
+    max-width: calc(100%/4 - 24px);
+    font-size: 20rem;
+    line-height: 1.5em;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 3px 5px 8px #8888;
+    margin: 5px;
+}

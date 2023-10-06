@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Bích Ngọc</title>
+    <style>
+        /* Reset default margin and padding for all elements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Style the body background and text color */
+        body {
+            background-color: #191d1e;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Style the content container */
+        .content {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px 0px 20px 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            margin: 20px auto;
+            max-width: 740px;
+            display: flex
+        }
+        .member-image{
+            flex: 0 0 60%;
+        }
+        /* Style the member image */
+        .member-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Style member info */
+        .member-info {
+            flex: 1;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .member-info p {
+            margin-bottom: 10px;
+        }
+
+        .member-info span {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        /* Style the "Quay lại" link */
+        .return-link {
+            margin-top: 20px;
+            align-self: center;
+        }
+
+        .return-link a {
+            background: linear-gradient(90deg, #4a9cff, #8c63ff);
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .return-link a:hover {
+            background: linear-gradient(90deg,#5ebbff,#a174ff);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="member-image">
+            <img src="./images/NBN.jpg" alt="Nguyen Bich Ngoc">
+        </div>
+        <div class="member-info">
+            <p><span>Họ và tên:</span> Nguyễn Bích Ngọc</p>
+            <p><span>Giới tính:</span> Nữ</p>
+            <p><span>Ngày sinh:</span> 17/12/2003</p>
+            <p><span>Email:</span> nguyenbngoc@gmail.com</p>
+            <p><span>Số điện thoại:</span> 0964345333</p>
+            <div class="return-link">
+                <a href="../../index.html">Quay lại</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

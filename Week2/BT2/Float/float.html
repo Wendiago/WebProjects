@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8"\>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../color.css">
+        <title>Document</title>
+        <style>
+            *{
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                width: 80%;
+                margin: auto;
+            }
+            .r_header{
+                height: 50px;
+            }
+            .r_side{
+                height: 500px;
+            }
+            .r_content{
+                height: 500px;
+            }
+            .r_footer{
+                height: 30px;
+            }
+
+            [class*= "r_"]{
+                width: 100%;
+                border: 1px solid #000;
+            }
+            
+            @media only screen and (min-width: 800px) {
+                .r_side{
+                    width: 30%;
+                    float: left;
+                }
+                .r_content{
+                    width: 70%;
+                    float: right;
+                }
+                .r_footer{
+                    clear: both;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="r_header green-blue">HEADER</div>
+            <div class="r_side pink-blue">SIDE</div>
+            <div class="r_content purple-blue">CONTENT</div>
+            <div class="r_footer yellow-blue">FOOTER</div>
+        </div>
+    </body>
+</html>

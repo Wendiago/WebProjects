@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            display: block;
+            width: 100%;
+        }
+        .group-name{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            background: linear-gradient(177.34deg,#21a2ff,#8951ff 73.36%);
+            position: fixed;
+            z-index: 1;
+            width: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+        .name{
+            color: #fff;
+            font-size: 40px;
+        }
+        .main{
+            display: flex;
+            position: relative;
+            margin-top: 60px;
+        }
+        .group-img{
+            flex: 0 0 calc(66.66667% - 32px);
+            max-width: calc(66.66667% - 32px);
+            margin: 16px;
+            padding: 8px 8px;
+            background: linear-gradient(90deg,#5ebbff,#a174ff);
+            border-radius: 30px;
+        }
+        .group-img img{
+            max-width: 100%;
+            height: auto;
+            border-radius: 30px;
+        }
+        .group-list{
+            list-style-type: none;
+        }
+        .group-info{
+            flex: 0 0 33.33333%;
+            max-width: 33.33333%;
+        }
+        .member-name,
+        .member-gender{
+            color: #fff;
+            font-size: 24px;
+        }
+        .group-info{
+            background-color: #191d1e;
+            padding: 48px;
+            text-align: center;
+        }
+        .group-info .info-title h2 strong {
+            background: linear-gradient(260deg, #3d67ff 0%, #9773ff 50%, #efceff 80%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent; /* Hide the text color */
+            font-size: 32px;
+        }
+        .member{
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+    </style>
+    <title>My Group Profile</title>
+</head>
+<body>
+    <div class="group-name">
+        <h1>Meet my team: <span class="name">THE GHOSTS OF 12A1</span></h1>
+    </div>
+    <div class="container">
+        <div class="main">
+            <div class="group-img">
+                <img src="./images/groupImage.jpg" alt="Ảnh nhóm" usemap="#memberMap">
+            </div>
+        
+            <div class="group-info">
+                <div class="info-title">
+                    <h2>
+                        <strong>MEMBER INFORMATION</strong>
+                    </h2>
+                </div>
+                <ul class="group-list">
+                    <li class="member">
+                        <h3 class="member-name">Mai Linh Chi</h3>
+                        <p class="member-gender">Nữ</p>
+                    </li>
+                    <li class="member">
+                        <h3 class="member-name">Hùng Gia Hân</h3>
+                        <p class="member-gender">Nữ</p>
+                    </li>
+                    <li class="member">
+                        <h3 class="member-name">Nguyễn Bích Ngọc</h3>
+                        <p class="member-gender">Nữ</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <map name="memberMap">
+        <area shape="rect" coords="460,270,409,329" href="./Members/NguyenBichNgoc/NguyenBichNgoc.html" alt="Nguyễn Bích Ngọc">
+        <area shape="rect" coords="525,263,472,328" href="./Members/HungGiaHan/HungGiaHan.html" alt="Hùng Gia Hân">
+        <area shape="rect" coords="542,447,489,512" href="./Members/MaiLinhChi/MaiLinhChi.html" alt="Mai Linh Chi">
+    </map>
+</body>
+</html>

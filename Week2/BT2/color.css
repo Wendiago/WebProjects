@@ -1,0 +1,24 @@
+.green-blue{
+    background: rgb(2,0,36);
+    background: linear-gradient(176deg, rgba(2,0,36,1) 0%, rgba(40,214,20,1) 0%, rgba(0,212,255,1) 75%);
+}
+.orange-yellow{
+    background: rgb(2,0,36);
+    background: linear-gradient(176deg, rgba(2,0,36,1) 0%, rgba(218,67,18,1) 0%, rgba(255,190,0,1) 75%);
+}
+.pink-blue{
+    background: rgb(36,0,31);
+    background: linear-gradient(176deg, rgba(36,0,31,1) 0%, rgba(218,18,97,0.9372199563419118) 0%, rgba(0,255,237,1) 76%);
+}
+.yellow-blue{
+    background: rgb(36,0,31);
+    background: linear-gradient(176deg, rgba(36,0,31,1) 0%, rgba(255,255,1,1) 0%, rgba(0,255,237,1) 90%);
+}
+.purple-blue{
+    background: rgb(36,0,31);
+    background: linear-gradient(176deg, rgba(36,0,31,1) 0%, rgba(208,1,255,1) 0%, rgba(0,255,237,1) 86%);
+}
+.purple-pink{
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
