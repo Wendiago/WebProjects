@@ -7,8 +7,7 @@ const app = {
     dragTarget: null,
 
     //Win state
-    hasBlackWon: false,
-    hasWhiteWon: false,
+    hasWon: false,
 
     chessboardLayoutInitialize: function(){
         const chessboard = document.querySelector('.chessboard');
@@ -514,6 +513,10 @@ const app = {
         return isPresent;
     },
 
+    handleLostPieces: function(){
+
+    },
+
     handleEvent: function(){
         const chessboard = document.querySelector('.chessboard');
         const squares = chessboard.querySelectorAll('[class*="row-square"]');
@@ -589,7 +592,22 @@ const app = {
                         //If the square already has img => remove the img
                         const existingImg = targetSquare.querySelector('img');
                         if (existingImg){
+                            //Select the lost zone corresponding to the color of the captures chess piece
+                            let lostZone = null;
+                            if (existingImg.dataset.piece[0] === 'w'){
+                                lostZone = document.querySelector(".white-lost-list");
+                            }
+                            else{
+                                lostZone = document.querySelector(".black-lost-list");
+                            }
+                            
+                            //Create a captured chess piece in lost zone
+                            const capturedPiece =  `<img class="lost-piece" data-piece="" src="./assets/img/${existingImg.dataset.piece}.png" alt=""></img>`;
+                            lostZone.innerHTML += capturedPiece;
+
+                            //Remove the captured piece from the target square
                             targetSquare.removeChild(existingImg);
+
                             //If king is captured => Stop the game and notify the winner
                             if (existingImg.dataset.piece.includes('king')){
                                 const winScreen = document.querySelector(".winning-screen");
