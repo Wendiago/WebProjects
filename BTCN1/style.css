@@ -1,0 +1,613 @@
+:root{
+    --color-primary-0: #FF8207;	/* Main Primary color */
+    --color-primary-1: #FFD9B3;
+    --color-primary-2: #FFAA56;
+    --color-primary-3: #BA5C00;
+    --color-primary-4: #783B00;
+    --color-primary-5: #c2c1c1;
+    --color-text: #551A8B;
+}
+
+*{
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 62.5%;
+    line-height: 1.2rem; 
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    max-width: 100vw;
+}
+
+li {
+    list-style-type: none;
+}
+
+.error-log{
+    border: 1px solid #ff0000;
+}
+input:focus {
+    outline: none;
+}
+/*========================LAY OUT==========================*/
+.webpage{
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 360px auto;
+    grid-template-rows: minmax(10em, auto) auto 36px;
+}
+
+.header-wrapper{
+    grid-column: 1/ span 2;
+    grid-row: 1/2;
+}
+
+.sidebar{
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.main{
+    grid-column: 2/3;
+    grid-row: auto;
+    display: flex;
+}
+
+.footer{
+    grid-column: 1/ span 2;
+    grid-row: 3/4;
+}
+
+/*=========================HEADER SECTION ===================*/
+.header__title {
+    font-size: 3rem;
+    text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5); 
+    letter-spacing: 3px; 
+    color: #fff;
+    -webkit-text-stroke: 1px #000; 
+    text-stroke: 1px #000; 
+}
+.header{
+    margin-top: 7px;
+    height: 6em;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    background: rgb(10,188,232);
+    background: linear-gradient(180deg, rgba(10,188,232,1) 0%, rgba(203,223,246,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.header__navbar{
+    position: absolute;
+    width: 40%;
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    background: #B3DDEB;
+    padding: 5px 10px 5px 10px;
+    z-index: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header__navbar .navbar__item a{
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+/*Hover effect only for Menu 1*/
+.header__navbar .navbar__item:first-child:hover > a{
+    color: var(--color-primary-0);
+    text-shadow: 0px 2px 6px rgba(255, 255, 255);
+}
+
+/*Active effect for menu 1*/
+.header__navbar .navbar__item:first-child.active > a{
+    color: var(--color-primary-0);
+    text-shadow: 0px 2px 6px rgba(255, 255, 255);
+}
+
+.header-wrapper .hr-line {
+    position: absolute;
+    top: 150%; 
+    height: 2px; 
+    width: 100%; 
+    background-color: var(--color-text); 
+}
+
+.header-wrapper .hr-line hr {
+    z-index: 0; 
+    background-color: var(--color-text);
+    height: 2px;
+}
+
+/*=============================== Main section ================================== */
+/*====================== SIDE BAR =========================*/
+.sidebar{
+    position: relative;
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    justify-content: center;
+}
+.sidebar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px; /* Width of the separator line */
+    height: 100%; /* Cover the entire height of the sidebar */
+    border-right: 1px dotted var(--color-text); /* Dotted line style */
+}
+
+.sidebar .news-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.news-container .news{
+    width: 100%;
+    margin-top: 3px;
+    cursor: n-resize;
+}
+
+.news.dragging{
+    cursor: n-resize!important;
+}
+
+.news-container .news:last-child{
+    margin-bottom: 10px;
+}
+.news .news__header{
+    width: 100%;
+    background-color: var(--color-primary-0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0 15px 0;
+}
+.news .news__header div{
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 100%;
+}
+.news .news__header .news__title{
+    font-size: 2rem;
+    color: #ffffffcd;
+}
+.news .news__header .news__toggle-btn{
+    color: var(--color-primary-1);
+    margin: 0 5px 0 7px;
+    font-size: 1.5rem;
+}
+.news .news__header .news__drag-btn{
+    color: var(--color-primary-1);
+    margin: 0 7px 0 5px;
+    font-size: 2rem;
+}
+.news .news__header .news__toggle-btn:hover{
+    cursor: pointer;
+    color: #fff;
+}
+.news .news__content{
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--color-primary-5);
+    border-radius: 0 0 5px 5px;
+    max-height: 2000px; /* Adjust to a sufficiently large value or use "auto" depending on your content */
+    transition: max-height 0.1s ease-in-out; 
+}
+.news .news__content p{
+    padding: 5px;
+    font-size: 1.5rem;
+    color: #089dce;
+    line-height: 130%;
+}
+
+/* News inactive state */
+.news.inactive .news__content{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.1s ease-in-out;
+}
+.news.inactive .news__header{
+    background-color: var(--color-primary-1);
+}
+.news.inactive .news__header .news__title{
+    color: rgba(0, 0, 0, 0.3);
+}
+.news.inactive .news__header .news__toggle-btn{
+    color: rgba(0, 0, 0, 0.3);
+}
+.news.inactive .news__header .news__drag-btn{
+    color: rgba(0, 0, 0, 0.3);
+}
+.news.inactive .news__header .news__toggle-btn:hover{
+    color: #000;
+}
+.news.inactive .news__header .news__drag-btn:hover{
+    color: #000;
+}
+
+
+/*===================== Registration title ====================*/
+.content-wrapper{
+    width: 95%;
+    margin: 0 auto 0 30px;
+}
+.registration-title{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--color-primary-0);
+    font-weight: bold;
+    font-family: serif;
+}
+
+/*===========Registration input=======*/
+.registration-info-section {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0px 5px 0px;
+}
+.registration-field-title{
+    font-size: 1.2rem;
+    justify-self: right;
+    margin-right: 3px;
+}
+.registration-fields{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 3px;
+}
+.input-field.gender{
+    display: flex;
+    align-items: center;
+}
+.input-field [class*="radio-input"]{
+    display: flex;
+    margin-right: 10px;
+}
+.input-field [class*="radio-input"] label{
+    margin-left: 2px;
+}
+
+.input-field input[type="text"],
+.input-field input[type="date"]{
+    width: 100%;
+    padding: 3px;
+}
+.input-field .error-mess{
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.input-field .error-mess.active{
+    max-height: 20px;
+    width: 100%;
+    color: red;
+    font-size: 1rem;
+    padding: 3px 0px 0px 2px;
+}
+
+/*======= Product selection section ============*/
+.product-selection-section{
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr;
+    grid-template-rows: 420px;
+    grid-template-areas: 
+    "select-box-section control-btn-section result-box-section"
+}
+.select-box-section{
+    grid-area: select-box-section;
+    display: grid;
+    grid-template-rows: 20px 400px;
+}
+.control-btn-section{
+    grid-area: control-btn-section;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.result-box-section{
+    grid-area: result-box-section;
+    display: grid;
+    grid-template-rows: 20px 400px;
+}
+.select-box-title, 
+.result-box-title{
+    grid-row: 1/2;
+    font-family: serif;
+    color: var(--color-primary-2);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.select-box, 
+.result-box{
+    grid-row: 2/3;
+    overflow: hidden; 
+    overflow-y: scroll;
+}
+.select-box-title{
+    justify-self: right;
+    align-self: center;
+}
+.result-box-title{
+    justify-self: left;
+    align-self: center;
+}
+.select-box{
+    border: 2px solid var(--color-primary-5);
+}
+.result-box{
+    border: 1px solid var(--color-primary-0);
+    background-color: #eafafb;
+}
+.result-box .item-list {
+    background-color: #eafafb;
+}
+.control-btn-section .control-btn{
+    width: 80%;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
+    border: 1px solid var(--color-primary-0);
+    border-radius: 4px;
+    margin: 2px 0 2px 0;
+    color: var(--color-text);
+}
+.control-btn-section .control-btn:hover{
+    background-color: var(--color-primary-0);
+    color: #fff;
+    cursor: pointer;
+}
+.item-list .item{
+    margin: 3px;
+    border-radius: 4px;
+    border: 1px solid var(--color-primary-5);
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 0 3rem 0;
+}
+.item-list .item .item-img{
+    font-size: 5rem;
+    text-align: center;
+}
+.item-list .item .item-name{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+.item-list .item .item-price{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-primary-0);
+    text-align: center;
+    margin-right: 7px;
+}
+.item-list .item:hover{
+    background-color: var(--color-primary-2);
+    cursor: pointer;
+}
+.item-list .item:hover .item-name,
+.item-list .item:hover .item-price{
+    color: #fff;
+}
+
+/*Choose*/
+.item-list .item.active{
+    background-color: var(--color-primary-2);
+    cursor: pointer;
+}
+.item-list .item.active .item-name,
+.item-list .item.active .item-price{
+    color: #fff;
+}
+
+/*Alrealdy selected*/
+.item.selected {
+    background-color: #ccc; /* Change background color */
+    pointer-events: none; /* Disable pointer events to prevent selection */
+    cursor: not-allowed; /* Change cursor style */
+}
+
+/*============= Registration btn section ====================*/
+.registration-btn-section{
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.register-btn,
+.delete-btn{
+    color: var(--color-text);
+    padding: 5px 10px 5px 10px;
+    border: 1px solid var(--color-primary-0);
+    border-radius: 4px;
+    margin: 0px 4px 0px 4px;
+    font-size: 1.2rem;
+}
+
+.register-btn:hover,
+.delete-btn:hover{
+    color: #fff;
+    background-color: var(--color-primary-0);
+    cursor: pointer;
+}
+
+/*============ Registration table section =======================*/
+table.registration-table-section {
+    border-collapse: separate;
+    border-spacing: 2px; 
+    width: 100%;
+    margin: 5px 0 10px 0;
+}
+table.registration-table-section th,td{
+    padding: 3px;
+    font-size: 1.2rem;
+}
+table.registration-table-section th{
+    background-color: var(--color-primary-2);
+    color: #fff;
+}
+/* Center align text in the "Giới tính" and "Ngày giao" columns */
+.registration-table-info__row td:nth-child(2),
+.registration-table-info__row td:nth-child(4) { 
+    text-align: center;
+}
+/* Color odd and even row*/
+tbody.registration-table-info tr:nth-child(2n) td{
+    background-color: var(--color-primary-1);
+}
+
+/* Footer section */
+.footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer .footer__navbar{
+    width: 100%;
+    background-color: var(--color-primary-1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-primary-0);
+    border-radius: 4px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    font-size: 1.2em;
+    padding: 3px 0 3px 0;
+    margin: 7px 0 5px 0;
+}
+.footer .hr-line{
+    width: 100%;
+}
+.footer hr{
+    height: 2px;
+    background-color: var(--color-text);
+}
+.footer .footer__navbar .footer-item{
+    margin: 0 10px 0 10px;
+    color: var(--color-primary-0);
+    padding-bottom: 2px;
+}
+.footer .footer__navbar .footer-item-link{
+    text-decoration: underline;
+    cursor: pointer;
+    position: relative;
+}
+
+/*Hover and active effect for menu1*/
+.footer .footer__navbar .footer-item-link:nth-child(2):hover{
+    color: #fff;
+    background-color: var(--color-primary-0);
+}
+
+.footer .footer__navbar .footer-item-link:nth-child(2).active{
+    color: #fff;
+    background-color: var(--color-primary-0);
+}
+.footer__navbar-item--separator::after{
+    content: "";
+    height: 12px;
+    width: 1px;
+    background: var(--color-primary-0);
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    transform: translateY(45%);
+}
+
+/*========================== RESPONSIVE ==================================*/
+@media only screen and (max-width: 768px){
+    .webpage{
+        display: grid;
+        grid-template-columns: 1fr; /* Use a single column layout */
+        grid-template-rows: minmax(10em, auto) auto auto 36px;
+    }
+    
+    .header-wrapper{
+        grid-column: 1 / span 1;
+        grid-row: 1/2;
+    }
+    
+    .sidebar{
+        grid-column: 1 / span 1;
+        grid-row: 2/3;
+    }
+    
+    .main{
+        grid-column: 1 / span 1;
+        grid-row: 3/4;
+        display: flex;
+    }
+    
+    .footer{
+        grid-column: 1 / span 1;
+        grid-row: 4/5;
+    }
+
+    .sidebar::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 1px;
+        border-right: 1px dotted var(--color-text); 
+    }
+
+    .header__navbar{
+        position: absolute;
+        width: 40%;
+        top: 7%;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+        background: #B3DDEB;
+        padding: 5px 10px 5px 10px;
+        z-index: 1; 
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .content-wrapper{
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .registration-fields{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        padding: 3px;
+        margin: 2px 0 2px 0;
+    }
+}

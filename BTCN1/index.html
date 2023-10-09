@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Đăng ký đơn hàng</title>
+</head>
+<body>
+    <div class="webpage">
+        <div class = "header-wrapper">
+            <div class="header">
+                <strong class="header__title">Bài tập 1 - &lt;21120297&gt;</strong>
+                <div class="hr-line">
+                    <hr>
+                </div> 
+            </div>
+            <div class="header__navbar">
+                <div class="navbar__item">
+                    <a href="" class="navbar__item-link">Menu1</a>
+                </div>
+                <div class="navbar__item">
+                    <a href="" class="navbar__item-link">Menu2</a>
+                </div>
+                <div class="navbar__item">
+                    <a href="" class="navbar__item-link">Menu3</a>
+                </div>
+                <div class="navbar__item">
+                    <a href="" class="navbar__item-link">Menu4</a>
+                </div>
+                <div class="navbar__item">
+                    <a href="" class="navbar__item-link">Menu5</a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="sidebar">
+            <ul class="news-container">
+                <li class="news inactive" draggable="true">
+                    <div class="news__header">
+                        <div class="news__toggle-btn">▶</div>
+                        <div class="news__title">NEWS 1</div>
+                        <div class="news__drag-btn">↕</div>
+                    </div>
+                    <div class="news__content">
+                        <p>Since March 8, 1990, Womens Day has been observed by SAARC (South Asian Association for Regional Cooperation) comprising seven countries namely India, Pakistan, Nepal, Bhutan, Bangladesh, Sri Lanka and Maldives. The day is celebrated to highlight the problems of the girl child in these countries.</p>
+                    </div>
+                </li>
+                <li class="news inactive" draggable="true">
+                    <div class="news__header">
+                        <div class="news__toggle-btn">▶</div>
+                        <div class="news__title">NEWS 2</div>
+                        <div class="news__drag-btn">↕</div>
+                    </div>
+                    <div class="news__content">
+                        <p>Everyone knows that paper is made from trees. But when one looks at trees, one cannot imagine that something so soft and fragile as the paper is made is so hard and strong. Plant materials such as wood are made of fibres known as cellulose. It is the primary ingredient in paper making. Raw wood is first converted into pulp consisting of a mixture of Cellulose, lignin, water and some chemicals.</p>
+                    </div>  
+                </li>
+                <li class="news inactive" draggable="true">
+                    <div class="news__header">
+                        <div class="news__toggle-btn">▶</div>
+                        <div class="news__title">NEWS 3</div>
+                        <div class="news__drag-btn">↕</div>
+                    </div>
+                    <div class="news__content">
+                        <p>Training in a specific branch of applied science, such as engineering, agriculture, weaving, spinning, etc., is considered technical education. It contrasts with liberal education which aims to impart general knowledge of arts and sciences. In the modern era, technical education is extremely important. Today, a country's prosperity is determined by its industrial development.</p>
+                    </div>
+                </li>
+                <li class="news inactive" draggable="true">
+                    <div class="news__header">
+                        <div class="news__toggle-btn">▶</div>
+                        <div class="news__title">NEWS 4</div>
+                        <div class="news__drag-btn">↕</div>
+                    </div>
+                    <div class="news__content">
+                        <p>After summer comes the rainy season. It lasts from mid-June to the end of September. During this time of year, the sky is cloudy. It drizzles and rains cats and dogs sometimes. Rains provide relief from the oppressive summer heat. Green leaves are developed by the tree. Ponds and rivers are full of water. Monsoon is a boon for farmers. Rainwater softens the soil and makes it suitable for cultivation. Monsoon has some disadvantages. Due to heavy and incessant rainfall, the roads, especially in villages, become muddy.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="content-wrapper">
+                <div class="registration-title">ĐĂNG KÝ ĐƠN HÀNG</div>
+                <hr>
+                <div class="registration-info-section">
+                    <div class="registration-fields">
+                        <div class="registration-field-title">Họ và tên:</div>
+                        <div class="input-field">
+                            <input type="text" id = "name">
+                            <div class="error-mess name"></div>
+                        </div> 
+                    </div>
+                    <div class="registration-fields">
+                        <div class="registration-field-title">Địa chỉ:</div>
+                        <div class="input-field">
+                            <input type="text" id = "address">
+                            <div class="error-mess address"></div>
+                        </div> 
+                    </div>
+                    <div class="registration-fields">
+                        <div class="registration-field-title">Điện thoại:</div>
+                        <div class="input-field">
+                            <input type="text" id = "phone">
+                            <div class="error-mess phone"></div>
+                        </div> 
+                    </div>
+                    <div class="registration-fields">
+                        <div class="registration-field-title">Giới tính:</div>
+                        <div class="input-field gender">
+                            <div class="male-radio-input">
+                                <input type="radio" id = "male" name = "gender" value = "Nam" checked>
+                                <label for="male">Nam</label>
+                            </div>
+                            <div class="female-radio-input">
+                                <input type="radio" id = "female" name = "gender" value = "Nữ">
+                                <label for="female">Nữ</label>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="registration-fields">
+                        <div class="registration-field-title">Ngày giao hàng:</div>
+                        <div class="input-field">
+                            <input type="date" id = "ship-date" placeholder="mm/dd/yyyy">
+                            <div class="error-mess date"></div>
+                        </div> 
+                    </div>
+                    <div class="registration-fields">
+                        <div class="registration-field-title">Email:</div>
+                        <div class="input-field">
+                            <input type="text" id = "email">
+                            <div class="error-mess email"></div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="product-selection-section">
+                    <div class="select-box-section">
+                        <div class="select-box-title">Danh sách sản phẩm</div>
+                        <div class="select-box">
+                            <ul class="item-list">
+                                <li class="item" data-index = "1" draggable="true">
+                                    <div class="item-img">📱</div>
+                                    <div class="item-name">Iphone 14 Pro Max 256GB</div>
+                                    <div class="item-price">$1349</div>
+                                </li>
+                                <li class="item" data-index = "2" draggable="true">
+                                    <div class="item-img">📱</div>
+                                    <div class="item-name">Samsung S23 Ultra 256GB</div>
+                                    <div class="item-price">$1089</div>
+                                </li>
+                                <li class="item" data-index = "3" draggable="true">
+                                    <div class="item-img">📱</div>
+                                    <div class="item-name">Ipad Pro M1 11'' 128GB</div>
+                                    <div class="item-price">$999</div>
+                                </li>
+                                <li class="item" data-index = "4" draggable="true">
+                                    <div class="item-img">💻</div>
+                                    <div class="item-name">ASUS ZenBook UX 505</div>
+                                    <div class="item-price">$929</div>
+                                </li>
+                                <li class="item" data-index = "5" draggable="true">
+                                    <div class="item-img">💻</div>
+                                    <div class="item-name">LG Gram 2023 17''</div>
+                                    <div class="item-price">$1049</div>
+                                </li>
+                                <li class="item" data-index = "6" draggable="true">
+                                    <div class="item-img">💻</div>
+                                    <div class="item-name">DELL XPS 13 9315 &lpar;2022&&rpar;</div>
+                                    <div class="item-price">$1199</div>
+                                </li>
+                                <li class="item" data-index = "7" draggable="true">
+                                    <div class="item-img">💻</div>
+                                    <div class="item-name">ASUS ZenBook UX</div>
+                                    <div class="item-price">$1000</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="control-btn-section">
+                        <div class="control-btn select-btn">&gt;</div>
+                        <div class="control-btn selectAll-btn">&gt;&gt;</div>
+                        <div class="control-btn unselect-btn">&lt;</div>
+                        <div class="control-btn unselectAll-btn">&lt;&lt;</div>
+                    </div>
+                    <div class="result-box-section">
+                        <div class="result-box-title">Sản phẩm đã chọn</div>
+                        <div class="result-box">
+                            <ul class="item-list">
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="registration-btn-section">
+                    <div class="register-btn">Đăng ký</div>
+                    <div class="delete-btn">Xóa hết</div>
+                </div>
+                <hr>
+                <table class="registration-table-section">
+                    <colgroup>
+                        <col style="width: 30%;">
+                        <col style="width: 10%;">
+                        <col style="width: 20%;">
+                        <col style="width: 10%;">
+                        <col style="width: 30%;">
+                    </colgroup>
+                    <thead class = "registration-table-field__row">
+                        <tr>
+                            <th class = "registration-table-field name-field">Họ tên</th>
+                            <th class = "registration-table-field gender-field">Giới tính</th>
+                            <th class = "registration-table-field address-field">Địa chỉ</th>
+                            <th class = "registration-table-field ship-field">Ngày giao</th>
+                            <th class = "registration-table-field product-field">Sản phẩm</th>
+                        </tr>
+                    </thead>
+                    <tbody class = "registration-table-info">
+                        <tr class="registration-table-info__row">
+                            <td>Nguyễn Thị A</td>
+                            <td>Nữ</td>
+                            <td>TP Hồ Chí Minh</td>
+                            <td>2023-10-10</td>
+                            <td>LG Gram 2023 17''; Ipad Pro M1 11'' 128GB</td>
+                        </tr>
+                        <tr class="registration-table-info__row">
+                            <td>Nguyễn Văn A</td>
+                            <td>Nam</td>
+                            <td>Hà Nội</td>
+                            <td>2023-10-10</td>
+                            <td>Sản phẩm A</td>
+                        </tr>
+                        <tr class="registration-table-info__row">
+                            <td>Nguyễn Thị A</td>
+                            <td>Nữ</td>
+                            <td>TP Hồ Chí Minh</td>
+                            <td>2023-10-10</td>
+                            <td>LG Gram 2023 17''; Ipad Pro M1 11'' 128GB</td>
+                        </tr>
+                        <tr class="registration-table-info__row">
+                            <td>Nguyễn Văn A</td>
+                            <td>Nam</td>
+                            <td>Hà Nội</td>
+                            <td>2023-10-10</td>
+                            <td>Sản phẩm A</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class = "footer">
+            <div class="hr-line">
+                <hr>
+            </div>           
+            <div class="footer__navbar">
+                <div class="footer-item">Copyright © &lt;HoangNgoc&gt;</div>
+                <div class="footer-item footer-item-link footer__navbar-item--separator">Menu1</div>
+                <div class="footer-item footer-item-link footer__navbar-item--separator">Menu2</div>
+                <div class="footer-item footer-item-link footer__navbar-item--separator">Menu3</div>
+                <div class="footer-item footer-item-link footer__navbar-item--separator">Menu4</div>
+                <div class="footer-item footer-item-link">Menu5</div>
+            </div>
+        </div>
+    </div>
+    <script src = "app.js"></script>
+</body>
+</html>
