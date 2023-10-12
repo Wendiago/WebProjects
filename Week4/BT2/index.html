@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = "../../jquery-3.7.1.min.js"></script>
+    <title>Form</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: 150px auto;
+            gap: 10px;
+        }
+        form{
+            width: 40%;        
+        }
+        body{
+            min-height: 100vh;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .label{
+            grid-column: 1/2;
+            justify-self: right;
+            padding-right: 10px;
+            align-self: center;
+        }
+        .input-section{
+            grid-column: 2/3;
+        }
+        .container input{
+            border: 1px solid #000;
+            padding: 4px 0 4px 4px;
+            width: 100%;
+        }
+        .container input:focus.invalid{
+            outline: none;
+            border: 1px solid #ff0000;
+        }
+        .container button{
+            grid-column: 1/ span 2;
+            width: fit-content;
+            justify-self: center;
+            padding: 4px;
+            border: 1px solid #000;
+            box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+        }
+        .container button:hover{
+            opacity: 0.7;
+            cursor: pointer;
+        }
+        .error-log{
+            grid-column: 2/3;
+            width: 100%;
+            display: none;
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="post">
+        <div class="container">
+            
+                <label for="fullname" class="label">Enter full name:</label>
+                <div class="input-section">
+                    <input type="text" name="fullname" value="" id="fullname" required>
+                    <div class="error-log efn">Error</div>
+                </div>
+                
+                <label for="username" class="label">Enter user name:</label>
+                <div class="input-section">
+                    <input type="text" name="username" id="username" required>
+                    <div class="error-log eun">Error</div>
+                </div>
+                
+                <label for="email" class="label">Enter email:</label>
+                <div class="input-section">
+                    <input type="email" name="email" value="" id="email" required>
+                    <div class="error-log eemail">Error</div>
+                </div>
+
+                <label for="phoneNumber" class="label">Enter phone number:</label>
+                <div class="input-section">
+                    <input type="tel" name="phoneNumber" value="" id="phoneNumber" required>
+                    <div class="error-log etel">Error</div>
+                </div>
+               
+                <label for="dateOfBirth" class="label">Enter date of birth:</label>
+                <div class="input-section">
+                    <input type="date" name="dateOfBirth" value="" id="dateOfBirth" required>
+                    <div class="error-log edate">Error</div>
+                </div>
+                
+                <button type="submit" class="submission-btn">Submit</button>
+        </div>     
+    </form>
+    <script src = "script.js"></script>
+</body>
+</html>

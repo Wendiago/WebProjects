@@ -151,9 +151,9 @@ input:focus {
     position: absolute;
     top: 0;
     right: 0;
-    width: 1px; /* Width of the separator line */
-    height: 100%; /* Cover the entire height of the sidebar */
-    border-right: 1px dotted var(--color-text); /* Dotted line style */
+    width: 1px; 
+    height: 100%; 
+    border-right: 1px dotted var(--color-text); 
 }
 
 .sidebar .news-container{
@@ -209,7 +209,7 @@ input:focus {
     height: auto;
     border: 1px solid var(--color-primary-5);
     border-radius: 0 0 5px 5px;
-    max-height: 2000px; /* Adjust to a sufficiently large value or use "auto" depending on your content */
+    max-height: 2000px; 
     transition: max-height 0.1s ease-in-out; 
 }
 .news .news__content p{
@@ -430,9 +430,9 @@ input:focus {
 
 /*Alrealdy selected*/
 .item.selected {
-    background-color: #ccc; /* Change background color */
-    pointer-events: none; /* Disable pointer events to prevent selection */
-    cursor: not-allowed; /* Change cursor style */
+    background-color: #ccc; 
+    pointer-events: none; 
+    cursor: not-allowed; 
 }
 
 /*============= Registration btn section ====================*/
@@ -548,7 +548,7 @@ tbody.registration-table-info tr:nth-child(2n) td{
 @media only screen and (max-width: 768px){
     .webpage{
         display: grid;
-        grid-template-columns: 1fr; /* Use a single column layout */
+        grid-template-columns: 1fr; 
         grid-template-rows: minmax(10em, auto) auto auto 36px;
     }
     

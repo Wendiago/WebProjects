@@ -1,18 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Bé tập tính</title>
+    <title>Calculator</title>
 </head>
 <body>
-    
+    <div class="header">Bé tập tính</div>
+    <div class="container">
+        <div class="number">Số thứ nhất</div>
+        <input type="text" id="num1" onblur="checkInput(this)">
+        <div class="number">Số thứ hai</div>
+        <input type="text" id="num2" onblur="checkInput(this)">
+        <div class="result">Kết quả</div>
+        <input type="text" id="result" disabled>
+        <div class="operator">
+            <input type="radio" name="operator" value="plus" checked> Cộng<br>
+            <input type="radio" name="operator" value="subtract"> Trừ<br>
+            <input type="radio" name="operator" value="multiply"> Nhân<br>
+            <input type="radio" name="operator" value="divide"> Chia<br>
+            <input type="button" name="calculate" value="Tính" onclick="calculation()">
+        </div>
+        <div class="notify">Thông báo
+            <span id="notification" style="color:red"></span>
+        </div>
+    </div>
+    <script>
+        function calculation() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var notification = document.getElementById("notification");
+            var operator = document.querySelector('input[name="operator"]:checked').value;
+            var resultField = document.getElementById("result");
 
+            var result = 0;
 
+            if (operator === "plus") {
+                result = num1 + num2;
+            } else if (operator === "subtract") {
+                result = num1 - num2;
+            } else if (operator === "multiply") {
+                result = num1 * num2;
+            } else if (operator === "divide") {
+                if (num2 !== 0) {
+                    result = num1 / num2;
+                } else {
+                    notification.innerText = "Không thể chia cho 0";
+                    return;
+                }
+            }
 
+            resultField.value = result;
+        }
 
+        function checkInput(inputElement) {
+            var inputValue = inputElement.value.trim();
+            var notification = document.getElementById("notification");
 
-    <script src = "app.js"></script>
+            if (inputValue === "" || isNaN(inputValue)) {
+                if (inputElement.id === "num1"){
+                    notification.innerText = "Giá trị nhập ở ô Số thứ nhất không phải là số";
+                }
+                else if (inputElement.id === "num2"){
+                    notification.innerText = "Giá trị nhập ở ô Số thứ hai không phải là số";
+                }
+            } else {
+                notification.innerText = "";
+            }
+        }
+    </script>
 </body>
 </html>
