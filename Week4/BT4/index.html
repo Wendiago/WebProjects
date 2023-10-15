@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = "../jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="header">Bé tập tính</div>
+    <div class="container">
+        <div class="input-number">Số thứ nhất</div>
+        <input type="text" id="num1">
+        <div class="input-number">Số thứ hai</div>
+        <input type="text" id="num2">
+        <div class="result">Kết quả</div>
+        <input type="text" id="result" disabled>
+        <div class="operator">
+            <input type="radio" name="operator" value="plus" checked> Cộng<br>
+            <input type="radio" name="operator" value="subtract"> Trừ<br>
+            <input type="radio" name="operator" value="multiply"> Nhân<br>
+            <input type="radio" name="operator" value="divide"> Chia<br>
+            <input type="button" id="calculate" value="Tính">
+        </div>
+        <div class="notify">Thông báo
+            <span id="notification" style="color:red"></span>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            function calculation() {
+                var num1 = parseFloat($("#num1").val());
+                var num2 = parseFloat($("#num2").val());
+                var notification = $("#notification");
+                var operator = $('input[name="operator"]:checked').val();
+                var resultField = $("#result");
+
+                var result = 0;
+
+                if (operator === "plus") {
+                    result = num1 + num2;
+                } else if (operator === "subtract") {
+                    result = num1 - num2;
+                } else if (operator === "multiply") {
+                    result = num1 * num2;
+                } else if (operator === "divide") {
+                    if (num2 !== 0) {
+                        result = num1 / num2;
+                    } else {
+                        notification.text("Không thể chia cho 0");
+                        return;
+                    }
+                }
+
+                resultField.val(result);
+            }
+
+            function checkInput(inputElement) {
+                var inputValue = inputElement.value.trim();
+                var notification = $("#notification");
+
+                if (inputValue === "" || isNaN(inputValue)) {
+                    if ($(inputElement).attr("id") === "num1") {
+                        notification.text("Giá trị nhập ở ô Số thứ nhất không phải là số");
+                    } else if ($(inputElement).attr("id") === "num2") {
+                        notification.text("Giá trị nhập ở ô Số thứ hai không phải là số");
+                    }
+                } else {
+                    notification.text("");
+                }
+            }
+
+            $("#calculate").click(calculation);
+
+            $("[id*='num']").on('input', function(e) {
+                checkInput(this);
+            });
+        });
+    </script>
+</body>
+</html>

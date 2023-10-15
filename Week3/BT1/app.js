@@ -513,10 +513,6 @@ const app = {
         return isPresent;
     },
 
-    handleLostPieces: function(){
-
-    },
-
     handleEvent: function(){
         const chessboard = document.querySelector('.chessboard');
         const squares = chessboard.querySelectorAll('[class*="row-square"]');
