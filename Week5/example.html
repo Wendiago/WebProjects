@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <script src="../jquery-3.7.1.min.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <nav class="navbar navbar-light bg-light justify-content-between col-md-12">
+                <a class="navbar-brand">Navbar</a>
+                <form class="form-inline">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success my-sm-0 ps-1" type="submit">Search</button>
+                </form>
+            </nav>
+            <div class="card p-md-0">
+                <h5 class="card-header">Featured</h5>
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="container">
+                    <div class="row">
+                        <input type="button" class="btn btn-primary col-md-2" value="Request">
+                        <table class="table col-md-12 table-dark">
+                            <thead>
+                            <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">Full name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Image</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        //fetch API
+        $(() => {
+            $('input[type = "button"]').on('click', async() => {
+                try {
+                    const res = await fetch('https://reqres.in/api/users?page=2');
+                    const data = await res.text();
+                    const obj = JSON.parse(data);
+                    //console.log(data);
+                    const people = Object.data;
+                    const rsHTML = '';
+                    people.forEach(p => {
+                        rsHTML +=   `<tr>
+                                        <td>${p.id}</td>
+                                        <td>${p.first_name} ${p.last_name}</td>
+                                        <td>${p.email}</td>
+                                        <id><img src='${p.avatar}' alt='${p.id}'></td>
+                                    </tr>
+                                    `;
+                    });
+                    $('tbody').html(rsHTML);
+                } catch (error) {
+                    console.log(error);
+                }
+            });
+        });
+        //Example of async and await
+        async function doChoreAsync(chore) {
+            console.log(`Started ${chore}...`);
+            sleep(2000);
+            if (chore.length > 0) {
+                return `Finished my ${chore}!`;
+            } else {
+                throw new Error('no task');
+            }
+        }
+        async function run() {
+            try{
+                const rs = await doChoreAsync('task-01');
+                console.log(rs);
+            }catch (error){
+                console.log(error);
+            }
+
+            console.log('task-02');
+        }
+    </script>
+</body>
+</html>
