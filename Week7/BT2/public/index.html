@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        Calculator
+                    </div>
+                    <div class="card-body">
+                        <form action="/calculate" method="get">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">x</span>
+                                <input type="text" class="form-control" name="x" value="">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">y</span>
+                                <input type="text" class="form-control" name="y" value="">
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" name="opt">
+                                    <option selected value="plus" class="text-center">+</option>
+                                    <option value="minus" class="text-center">-</option>
+                                    <option value="multi" class="text-center">x</option>
+                                    <option value="divide" class="text-center">:</option>
+                                </select>
+                                <button type="submit" class="btn btn-primary form-control my-2">
+                                    Calculate
+                                </button>
+                            </div>
+                        </form>
+                        <div class="alert alert-success text-center" role="alert"> 
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(()=>{
+            $("form").submit((e)=>{
+                e.preventDefault();
+                const x = $("input[name='x']").val();
+                const y = $("input[name='y']").val();
+                const opt = $("select[name='opt']").val();
+
+                $.get(`/calculate?x=${x}&y=${y}&opt=${opt}`, function (data) {
+                    $(".alert").text(`${data.result}`);
+                });
+            })
+        })
+    </script>
+</body>
+</html>

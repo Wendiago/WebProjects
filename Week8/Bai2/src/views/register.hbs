@@ -1,0 +1,36 @@
+<div class="container col-6 p-3 border border-1 border-info rounded-3 my-5 bg-info-subtle">
+    <form action="/response" method = "POST" class="row g-3">
+        <div class="form-title d-flex justify-content-center align-items-center">
+            <h2>ĐĂNG KÝ THAM GIA HỘI NGHỊ</h2>
+        </div>
+        <div class="col-12">
+            <label for="inputEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail" name="inputEmail">
+        </div>
+        <div class="col-12">
+            <label for="inputName" class="form-label">Họ và tên</label>
+            <input type="text" class="form-control" id="inputName" name="inputName">
+        </div>
+        <div class="col-12">
+            <label for="inputPhoneNumber" class="form-label">SĐT</label>
+            <input type="text" class="form-control" id="inputPhoneNumber" name="inputPhoneNumber">
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="agree">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Đồng ý tham gia hội nghị
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value ="disagree" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Không đồng ý tham gia hội nghị
+                </label>
+            </div>
+        </div>
+        <div class="col-2">
+            <button type="submit" class="btn btn-primary">Gửi</button>
+        </div>
+    </form>
+</div>

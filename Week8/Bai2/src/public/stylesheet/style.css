@@ -1,0 +1,15 @@
+.custom-container{
+    max-width: 100%;
+    position: relative;
+}
+.img-container {
+    max-width: 100%;
+    height: auto;
+}
+.content-overlay{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
